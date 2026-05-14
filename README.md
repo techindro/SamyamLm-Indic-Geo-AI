@@ -246,15 +246,6 @@ SamyamLM detects objects that other platforms completely miss:
 | Frontend | React, Devanagari keyboard integration |
 | Infrastructure | AWS S3, EC2, CloudFront |
 
-
-### Output
-# [
-#   {"class": "auto-rickshaw", "confidence": 0.94, "hindi_label": "ऑटो-रिक्शा"},
-#   {"class": "cycle", "confidence": 0.89, "hindi_label": "साइकिल"},
-#   {"class": "pedestrian", "confidence": 0.76, "hindi_label": "पैदल यात्री"}
-# ]
-
-
 ### Code Example
 
 ```python
