@@ -17,6 +17,81 @@
 
 ## 📖 What is SamyamLM?
 
+SamyamLM is a data labeling platform built specifically for Indian languages and Indian geography. It helps create training data for AI models using satellite images, road cameras, and Hindi text.
+
+### The Name
+
+- **Samyam** (संयम) = Discipline and control in Sanskrit
+- **LM** = Language Model
+
+So SamyamLM means disciplined, high-quality data labeling for AI systems in India.
+
+### What Problem Does It Solve?
+
+Most AI labeling companies like Scale AI, Labelbox, and Appen were built for Western countries. They don't work well for India because:
+
+1. They don't support Hindi or other Indian scripts
+2. They don't understand Indian road conditions (auto-rickshaws, cattle, potholes)
+3. They can't process satellite images of Indian geography
+4. They fail in Indian weather (monsoon, dust, night driving)
+
+### How Does SamyamLM Work?
+
+The platform has six parts that work together:
+
+| Part | What It Does |
+|------|---------------|
+| Satellite Imagery | Takes pictures from ISRO satellites (5m to 30m resolution) |
+| Ground Cameras | Records video from cameras on Indian roads |
+| Hindi Text | Reads and understands Hindi language inputs |
+| AI Pre-labeling | Does 58% of the work automatically using AI models |
+| Human Review | Lets people check and fix labels using Hindi keyboard |
+| Quality Check | Runs 3 tests to ensure labels are correct |
+
+### What Makes It Different?
+
+SamyamLM can detect 47 objects that other platforms miss completely:
+
+- Auto-rickshaws, cycle-rickshaws, tractors, bullock carts
+- Cattle, stray dogs, buffalo, camels, elephants
+- Kutcha roads, potholes, speed breakers
+- Monsoon rain, dust haze, night driving conditions
+
+### How Well Does It Perform?
+
+Compared to Scale AI (the industry leader):
+
+- **59% faster** annotation speed
+- **15.6% better** at answering Hindi questions about images
+- **19.7% better** at detecting Indian road objects
+- **58% cheaper** per label
+
+### Who Is It For?
+
+- Self-driving car companies working on Indian roads
+- AI companies that want Hindi language models
+- Government agencies doing disaster response or crop monitoring
+- Satellite imaging companies
+
+### What Has Been Built So Far?
+
+The current version includes:
+- 275,000 labeled samples
+- 4.5 million individual annotations
+- A working web interface in Hindi
+- Open source code on GitHub
+
+### What's Next?
+
+- Support for all 22 Indian languages
+- Real-time satellite data processing
+- API for companies to use
+- Expansion to other countries like Indonesia and Nigeria
+
+### The Big Picture
+
+SamyamLM's goal is simple: make AI that actually understands India. Not as an afterthought, but built from the ground up for Indian languages, Indian roads, Indian weather, and Indian geography.
+
 **SamyamLM** is the world's first satellite-based multimodal data labeling platform built specifically for Indian languages and geographies.
 
 ### The Name
@@ -171,6 +246,15 @@ SamyamLM detects objects that other platforms completely miss:
 | Frontend | React, Devanagari keyboard integration |
 | Infrastructure | AWS S3, EC2, CloudFront |
 
+
+### Output
+# [
+#   {"class": "auto-rickshaw", "confidence": 0.94, "hindi_label": "ऑटो-रिक्शा"},
+#   {"class": "cycle", "confidence": 0.89, "hindi_label": "साइकिल"},
+#   {"class": "pedestrian", "confidence": 0.76, "hindi_label": "पैदल यात्री"}
+# ]
+
+
 ### Code Example
 
 ```python
@@ -182,10 +266,3 @@ annotator = CLIPAnnotator(model_name="ViT-B/32")
 # Detect India-specific objects
 image = Image.open("delhi_street.jpg")
 detections = annotator.detect_objects(image)
-
-# Output
-# [
-#   {"class": "auto-rickshaw", "confidence": 0.94, "hindi_label": "ऑटो-रिक्शा"},
-#   {"class": "cycle", "confidence": 0.89, "hindi_label": "साइकिल"},
-#   {"class": "pedestrian", "confidence": 0.76, "hindi_label": "पैदल यात्री"}
-# ]
