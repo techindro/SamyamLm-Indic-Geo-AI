@@ -15,6 +15,42 @@
 
 ---
 
+## 📖 What is SamyamLM?
+
+**SamyamLM** is the world's first satellite-based multimodal data labeling platform built specifically for Indian languages and geographies.
+
+### The Name
+
+**Samyam** (संयम) = Discipline + Control in Sanskrit  
+**LM** = Language Model
+
+Together, **SamyamLM** represents disciplined, controlled, and high-quality data labeling for AI systems serving India.
+
+### What Does It Do?
+
+SamyamLM helps companies and researchers create training data for AI models by combining:
+
+| Component | What It Does |
+|-----------|---------------|
+| 🛰️ **Satellite Imagery** | Processes ISRO and commercial satellite feeds (5m-30m resolution) |
+| 📷 **Ground Cameras** | Analyzes dashcam footage from Indian roads |
+| 📝 **Hindi Text** | Understands and annotates Hindi and other Indic languages |
+| 🤖 **AI Pre-labeling** | Reduces human effort by 58% using CLIP-based models |
+| 👨‍💻 **Human Review** | Hindi-first interface with Devanagari keyboard |
+| ✅ **Quality Assurance** | 3-stage QA with Cohen's κ > 0.75 |
+
+### Why "SamyamLM"?
+
+Most AI labeling platforms are built for English and Western data. They don't understand:
+- Hindi sentences and grammar
+- Indian road conditions (auto-rickshaws, cattle, potholes)
+- Satellite imagery for Indian geography
+- Monsoon, dust haze, and night driving in India
+
+**SamyamLM fixes all of this.** It's AI training data that actually understands India.
+
+---
+
 ## 📊 Key Results at a Glance
 
 | Metric | SamyamLM | Industry Average | Improvement |
@@ -46,225 +82,3 @@ Existing platforms like Scale AI, Labelbox, and Appen were built for Western mar
 ## 🚀 The Solution
 
 SamyamLM is the first data labeling platform purpose-built for India's linguistic and geographic diversity.
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ SAMYAMLM PIPELINE │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ │
-│ ┌──────────┐ │
-│ │Satellite │──┐ │
-│ │ Imagery │ │ │
-│ └──────────┘ │ ┌─────────────┐ ┌─────────────┐ ┌────────────┐│
-│ ├────►│ AI │────►│ Human │───►│ Quality ││
-│ ┌──────────┐ │ │ Pre-label │ │ Review │ │ Assurance ││
-│ │ Ground │ │ │ (58% less │ │ (Hindi UI) │ │ (κ > 0.75)││
-│ │Cameras │──┘ │ effort) │ └─────────────┘ └────────────┘│
-│ └──────────┘ └─────────────┘ │
-│ │
-│ ┌──────────┐ │
-│ │ Hindi │ │
-│ │ Text │───────────────────────────────────────────────────────────►│
-│ └──────────┘ │
-│ │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-
-### Comparison with Existing Platforms
-
-| Feature | Scale AI | Labelbox | Appen | SamyamLM |
-|---------|----------|----------|-------|----------|
-| Hindi Language Support | ❌ | ❌ | Partial | ✅ Native |
-| Devanagari Script UI | ❌ | ❌ | ❌ | ✅ Yes |
-| Satellite Imagery Input | ❌ | ❌ | ❌ | ✅ Yes |
-| India-Specific Objects | ❌ | ❌ | ❌ | ✅ 47 classes |
-| Indian Road Conditions | ❌ | ❌ | ❌ | ✅ Yes |
-| Adverse Weather (Monsoon) | ❌ | ❌ | ❌ | ✅ Yes |
-| Cost per Label | $0.29 | $0.27 | $0.25 | $0.12 |
-
----
-
-## 📊 Benchmark Results
-
-### Hindi Visual Question Answering (IndicVQA Benchmark)
-SamyamLM-VL (ours) ████████████████████████████████████████ 67.4%
-MuRIL-VL ███████████████████████████████ 51.8%
-Flamingo-9B ███████████████████ 34.1%
-CLIP (zero-shot) ███████████████ 28.7%
-
-
-**SamyamLM improvement: +15.6% over best baseline**
-
-### Indian Road Object Detection (mAP@0.5)
-
-SamyamLM fine-tuned ████████████████████████████████████████ 58.3%
-Scale AI fine-tuned ███████████████████████ 38.6%
-YOLOv8 (COCO) █████████████████ 31.2%
-
-
-**SamyamLM improvement: +19.7% over Scale AI on India-specific classes**
-
-### Annotation Throughput (labels per hour)
-
-SamyamLM (ours) ████████████████████████████████████████████ 510
-Scale AI ████████████████████████████ 320
-Labelbox █████████████████████████ 280
-Appen █████████████████████ 260
-
-
-**SamyamLM advantage: 59% faster than Scale AI**
-
----
-
-## 🛰️ India-Specific Object Classes (47)
-
-| Category | Examples |
-|----------|----------|
-| **Vehicles** | Auto-rickshaw (ऑटो-रिक्शा), Cycle-rickshaw (साइकिल-रिक्शा), Tractor (ट्रैक्टर), Tempo (टेंपो), Bullock cart (बैलगाड़ी) |
-| **Animals** | Cattle (मवेशी), Stray dog (आवारा कुत्ता), Buffalo (भैंस), Camel (ऊंट), Elephant (हाथी) |
-| **Road Conditions** | Kutcha road (कच्ची सड़क), Pothole (गड्ढा), Speed breaker (स्पीड ब्रेकर), Missing signage (गायब साइनेज) |
-| **Adverse Weather** | Monsoon rain (मानसून बारिश), Dust haze (धूल भरी आंधी), Night driving (रात में ड्राइविंग), Dense fog (घना कोहरा) |
-
----
-
-## 📁 Dataset v1.0 Statistics
-
-| Split | Modality | Samples | Annotated Labels |
-|-------|----------|---------|------------------|
-| Train | Satellite | 120,000 | 1,840,000 |
-| Val | Satellite | 15,000 | 230,000 |
-| Train | Ground Driving | 80,000 | 2,100,000 |
-| Val | Ground Driving | 10,000 | 260,000 |
-| Train | Hindi VQA | 45,000 | 90,000 |
-| Val | Hindi VQA | 5,000 | 10,000 |
-| **Total** | **All** | **275,000** | **4,530,000** |
-
----
-
-## 🏗️ Technology Stack
-
-| Layer | Technologies |
-|-------|--------------|
-| Vision-Language Model | CLIP (ViT-B/32), Fine-tuned checkpoint |
-| Deep Learning | PyTorch 2.0+, HuggingFace Transformers |
-| Geospatial | GDAL, Rasterio, ISRO Resourcesat-2A API |
-| Backend | FastAPI, PostgreSQL, Redis |
-| Frontend | React, Devanagari keyboard integration |
-| Infrastructure | AWS S3, EC2, CloudFront |
-
-### Code Example
-
-```python
-# Initialize SamyamLM annotator
-from samyamlm import CLIPAnnotator
-
-annotator = CLIPAnnotator(model_name="ViT-B/32")
-
-# Detect India-specific objects
-image = Image.open("delhi_street.jpg")
-detections = annotator.detect_objects(image)
-
-# Output
-# [
-#   {"class": "auto-rickshaw", "confidence": 0.94, "hindi_label": "ऑटो-रिक्शा"},
-#   {"class": "cycle", "confidence": 0.89, "hindi_label": "साइकिल"},
-#   {"class": "pedestrian", "confidence": 0.76, "hindi_label": "पैदल यात्री"}
-# ]
-
-👨‍💻 Quick Start
-Prerequisites
-bash
-Python 3.9+
-CUDA-capable GPU (recommended)
-Installation
-bash
-# Clone repository
-git clone https://github.com/samyamai/SamyamLM-Indic-Geo-AI
-cd SamyamLM-Indic-Geo-AI
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run CLIP annotator
-python src/prelabeling/clip_annotator.py
-Requirements.txt
-txt
-torch>=2.0.0
-torchvision>=0.15.0
-clip>=1.0
-Pillow>=9.0.0
-numpy>=1.24.0
-scikit-learn>=1.2.0
-📄 Citation
-bibtex
-@article{patel2025samyamlm,
-  title={SamyamLM: A Satellite-Based Multimodal Data Labeling Platform for Indian Language AI Training},
-  author={Patel, Shubham},
-  journal={arXiv preprint},
-  year={2025}
-}
-🤝 Y Combinator Application
-Detail	Information
-Company	Samyam AI
-Asking	
-50
-,
-000
-−
-50,000−150,000
-Use of funds	2 engineers (80K), Sales & marketing (40K), API infrastructure ($30K)
-Why us	First-mover in India's $XXB AI data market, 59% faster than Scale AI, Proprietary 47-class detection, Research-backed
-👤 Founder
-<div align="center">
-Shubham Patel
-
-Founder, Samyam AI
-
-https://img.shields.io/badge/Email-shubhamkumarpatel45%2540gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white
-https://img.shields.io/badge/LinkedIn-Shubham_Patel-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-https://img.shields.io/badge/Twitter-@SamyamAI-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white
-https://img.shields.io/badge/GitHub-samyamai-181717?style=for-the-badge&logo=github&logoColor=white
-
-</div>
-📜 License
-text
-MIT License
-
-Copyright (c) 2026 Samyam AI
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-🙏 Acknowledgements
-HuggingFace Transformers team for open-source NLP tools
-
-OpenAI CLIP team for vision-language foundation
-
-IndicNLP community for Indian language resources
-
-GDAL and Rasterio for geospatial processing
-
-ISRO for satellite data access
-
-<div align="center">
-⭐ Star this repository to support AI that works for every Indian ⭐
-
-Made with ❤️ in India
-
-Back to Top ↑
-
-</div> ```
-
