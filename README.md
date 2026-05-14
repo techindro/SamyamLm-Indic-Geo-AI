@@ -1,8 +1,8 @@
-# SamyamLm-Indic-Geo-AI
+
 
 <div align="center">
 
-# 🌍 SamyamLM | Scale AI for India
+# 🌍 SamyamLm-Indic-Geo-AI
 
 ### *Satellite-Based Multimodal Data Labeling Platform with Native Hindi Support*
 
