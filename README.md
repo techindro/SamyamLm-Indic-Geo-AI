@@ -39,7 +39,7 @@ SamyamLM helps companies and researchers create training data for AI models by c
 | 👨‍💻 **Human Review** | Hindi-first interface with Devanagari keyboard |
 | ✅ **Quality Assurance** | 3-stage QA with Cohen's κ > 0.75 |
 
-### Why "SamyamLM"?
+### Why SamyamLM?
 
 Most AI labeling platforms are built for English and Western data. They don't understand:
 - Hindi sentences and grammar
@@ -83,7 +83,6 @@ Existing platforms like Scale AI, Labelbox, and Appen were built for Western mar
 
 SamyamLM is the first data labeling platform purpose-built for India's linguistic and geographic diversity.
 
-
 ### Comparison with Existing Platforms
 
 | Feature | Scale AI | Labelbox | Appen | SamyamLM |
@@ -102,24 +101,33 @@ SamyamLM is the first data labeling platform purpose-built for India's linguisti
 
 ### Hindi Visual Question Answering (IndicVQA Benchmark)
 
-SamyamLM-VL (ours) ████████████████████████████████████████ 67.4%
-MuRIL-VL ███████████████████████████████ 51.8%
-Flamingo-9B ███████████████████ 34.1%
-CLIP (zero-shot) ███████████████ 28.7%
-
+| Model | Accuracy |
+|-------|----------|
+| SamyamLM-VL (ours) | **67.4%** |
+| MuRIL-VL | 51.8% |
+| Flamingo-9B | 34.1% |
+| CLIP (zero-shot) | 28.7% |
 
 **SamyamLM improvement: +15.6% over best baseline**
-SamyamLM fine-tuned ████████████████████████████████████████ 58.3%
-Scale AI fine-tuned ███████████████████████ 38.6%
-YOLOv8 (COCO) █████████████████ 31.2%
 
+### Indian Road Object Detection (mAP@0.5)
+
+| Model | mAP |
+|-------|-----|
+| SamyamLM fine-tuned (ours) | **58.3%** |
+| Scale AI fine-tuned | 38.6% |
+| YOLOv8 (COCO) | 31.2% |
 
 **SamyamLM improvement: +19.7% over Scale AI on India-specific classes**
-SamyamLM (ours) ████████████████████████████████████████████ 510
-Scale AI ████████████████████████████ 320
-Labelbox █████████████████████████ 280
-Appen █████████████████████ 260
 
+### Annotation Throughput (labels per hour)
+
+| Platform | Labels/Hour |
+|----------|-------------|
+| SamyamLM (ours) | **510** |
+| Scale AI | 320 |
+| Labelbox | 280 |
+| Appen | 260 |
 
 **SamyamLM advantage: 59% faster than Scale AI**
 
@@ -181,21 +189,3 @@ detections = annotator.detect_objects(image)
 #   {"class": "cycle", "confidence": 0.89, "hindi_label": "साइकिल"},
 #   {"class": "pedestrian", "confidence": 0.76, "hindi_label": "पैदल यात्री"}
 # ]
-
-### Annotation Throughput (labels per hour)
-
-
-### Indian Road Object Detection (mAP@0.5)
-
-👤 Founder
-<div align="center">
-Shubham Patel — Founder, Samyam AI
-
-mailto:shubhamkumarpatel45@gmail.com
-https://img.shields.io/badge/LinkedIn-Shubham_Patel-0077B5?style=flat&logo=linkedin&logoColor=white
-https://img.shields.io/badge/Twitter-@SamyamAI-1DA1F2?style=flat&logo=twitter&logoColor=white
-https://img.shields.io/badge/GitHub-samyamai-181717?style=flat&logo=github&logoColor=white
-
-</div>
-📜 License
-MIT License. Copyright (c) 2026 Samyam AI.
