@@ -1,0 +1,1 @@
+# SamyamLm-Indic-Geo-AI
